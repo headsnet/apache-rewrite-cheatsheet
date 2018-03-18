@@ -41,3 +41,12 @@ Redirect any page under a directory "/foo" to the equivalent under "/bar"
 ```
 RewriteRule ^/foo/(.*) /bar/$1 [L,R=permanent,QSA]
 ```
+
+## Removing .php extensions from URLs
+
+This will make "/foo" to "/foo.php" on the filesystem
+
+```
+RewriteCond %{DOCUMENT_ROOT}/%{REQUEST_FILENAME} !-f
+RewriteRule ^(.*) $1.php [QSA]
+```
