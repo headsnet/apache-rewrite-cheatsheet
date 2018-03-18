@@ -47,6 +47,6 @@ RewriteRule ^/foo/(.*) /bar/$1 [L,R=permanent,QSA]
 This will make "/foo" to "/foo.php" on the filesystem
 
 ```
-RewriteCond %{DOCUMENT_ROOT}/%{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(.*) $1.php [QSA]
 ```
